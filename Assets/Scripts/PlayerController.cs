@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 1000f; // How fast the player turns - smoothly
     private float targetYaw; // Target angle for rotation around Y-axis
     [SerializeField] Camera playerCamera;   // Camera following the player
+    public int colorChangeCount = 0;
 
     private void Start()
     {
