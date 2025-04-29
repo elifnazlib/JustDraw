@@ -1,11 +1,12 @@
 using UnityEngine;
 
+// This script is used to set and get the color of the palettes in the game
+
 public class ChosenColor : MonoBehaviour
 {
     [SerializeField] GameObject palette1;
     [SerializeField] GameObject palette2;
     [SerializeField] GameObject palette3;
-    [SerializeField] Material defaultMaterial;
 
     public void SetColorOfFirstPalette(Material material)
     {

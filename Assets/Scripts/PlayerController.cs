@@ -1,17 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+// This script controls the player movement and rotation in the game.
+// It allows the player to move forward, backward, and turn left or right using keyboard inputs.
+// The player is restricted to a certain area defined by boundaries.
+// When the game ends, the player's mesh renderer is disabled, and pressing 'N' will return to the menu scene.
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 20f;   // Speed of the player
     public float rotationSpeed = 1000f;   // How fast the player turns - smoothly
     private float targetYaw;   // Target angle for rotation around Y-axis
     public int colorChangeCount = 0;   // For setting the first chosen color when game starts
-    private CameraController _cameraController;
+    private CameraController _cameraController;   // Reference to the CameraController script
 
     private void Start()
     {
         targetYaw = transform.eulerAngles.y;   // Saving the starting angle
-        _cameraController = (CameraController)FindFirstObjectByType(typeof(CameraController));
+        _cameraController = (CameraController)FindFirstObjectByType(typeof(CameraController));   // Getting the CameraController script
     }
 
     void Update()
@@ -69,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
             transform.position += moveSpeed * Time.deltaTime * move;
 
-            // Inputs for turning right or left
+            // Inputs for rotating right or left
 
             if (Input.GetKeyDown(KeyCode.A))
                 targetYaw -= 90f;
@@ -91,6 +96,15 @@ public class PlayerController : MonoBehaviour
             // transform.GetComponent<MeshRenderer>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
             nose.GetComponent<MeshRenderer>().enabled = false;
+        }
+
+        
+        // If the game ends, pressing 'N' will return to the menu scene and unlock the cursor
+
+        if (Input.GetKeyDown(KeyCode.N) && _cameraController.isGameEnded == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadSceneAsync("Menu");
         }
     }
 }

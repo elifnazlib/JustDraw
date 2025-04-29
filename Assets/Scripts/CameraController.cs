@@ -10,15 +10,15 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Transform playerBody;
 
-    public bool isGameEnded = false;
+    public bool isGameEnded = false;    // For checking if the game is ended
 
     private Vector3 startPosition;
-    private Vector3 endPosition = new Vector3(0, 80f, 0);
+    private Vector3 endPosition = new Vector3(0, 85f, 0);
 
     private Quaternion startRotation;
     private Quaternion endRotation = Quaternion.Euler(90f, 0f, 0f);
 
-    private float desiredDuration = 5f;
+    private float desiredDuration = 5f; // Duration of the lerp
     private float elapsedTime;
 
 
@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
         if (isGameEnded == true)
         {
             // When game ends, the camera lerps and looks down from the top
-
+            
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / desiredDuration;
 

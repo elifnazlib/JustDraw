@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This script is attached to the start button in the menu scene.
+// When the button is clicked, it sets the materials for the palettes and loads the main game scene.
 public class StartGame : MonoBehaviour
 {
     [SerializeField] ColorDataSO _colorDataSO;

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// This scriptable object stores three materials that can be used in the game.
+
 [CreateAssetMenu(fileName = "ColorDataSO", menuName = "ColorDataSO")]
 public class ColorDataSO : ScriptableObject
 {
