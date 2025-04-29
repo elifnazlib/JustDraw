@@ -28,7 +28,7 @@ public class TrailController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && isReleased == false)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isReleased == false)
         {
             isReleased = true;
             GameObject clone = Instantiate(trailPrefab, transform.parent, false);
@@ -36,7 +36,7 @@ public class TrailController : MonoBehaviour
             transform.SetParent(null, true);
             clone.GetComponent<TrailRenderer>().material = firstMaterial;
         }
-        if (Input.GetKeyDown(KeyCode.K) && isReleased == false)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isReleased == false)
         {
             isReleased = true;
             GameObject clone = Instantiate(trailPrefab, transform.parent, false);
@@ -44,7 +44,7 @@ public class TrailController : MonoBehaviour
             transform.SetParent(null, true);
             clone.GetComponent<TrailRenderer>().material = secondMaterial;
         }
-        if (Input.GetKeyDown(KeyCode.L) && isReleased == false)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isReleased == false)
         {
             isReleased = true;
             GameObject clone = Instantiate(trailPrefab, transform.parent, false);
