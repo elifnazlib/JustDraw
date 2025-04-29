@@ -334,7 +334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rotationSpeed: 1000
-  playerCamera: {fileID: 1543321574}
   colorChangeCount: 0
 --- !u!1 &705507993
 GameObject:
@@ -726,7 +725,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -750,6 +749,7 @@ MonoBehaviour:
   mouseSensitivity: 300
   rotationSpeed: 50
   playerBody: {fileID: 208326720}
+  isGameEnded: 0
 --- !u!1 &2058166856
 GameObject:
   m_ObjectHideFlags: 0
