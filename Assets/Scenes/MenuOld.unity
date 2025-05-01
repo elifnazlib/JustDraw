@@ -1479,7 +1479,6 @@ MonoBehaviour:
   palette1: {fileID: 1251237852}
   palette2: {fileID: 1120714865}
   palette3: {fileID: 496552590}
-  defaultMaterial: {fileID: 2100000, guid: ffe808e7f11432f439405a771474b1a4, type: 2}
 --- !u!4 &1555388602
 Transform:
   m_ObjectHideFlags: 0
